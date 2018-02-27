@@ -12,10 +12,12 @@ import org.junit.Test;
  * @version (a version number or a date)
  */
 public class CalculadoraTest
-{
-    /**
-     * Default constructor for test class CalculadoraTest
-     */
+{ 
+    private int num1;
+    private int num2;
+    private int rdo;
+    private Operacion op;
+    
     public CalculadoraTest()
     {
     }
@@ -30,6 +32,10 @@ public class CalculadoraTest
     {
     }
 
+    public void  testSuma() { 
+
+          
+    }
     /**
      * Tears down the test fixture.
      *

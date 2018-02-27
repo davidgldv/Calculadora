@@ -55,8 +55,21 @@ public class Calculadora
             case DIVIDE:
                 rdo=num1/num2;
                 break;
+            case POTENCIA:
+            if (num2 > 1){
+            for( int c=1 ;  c < num2 ;  c ++){
+                if( c == 1){
+                    rdo=num1*num1;
+                  
+                }
+                else 
+                    rdo=rdo*num1;
+            }
         }
-    }
+            else 
+                    rdo=num1;
+   }
+}
     public void ponOperacion(String opera){
         switch(opera){
         
@@ -72,8 +85,12 @@ public class Calculadora
         case "DIVIDE":
             op=op.DIVIDE;
             break;
+        case "POTENCIA":
+            op=op.POTENCIA;
+            break;
         }
     }
+    
     public int dameResultado()
     {
         // put your code here

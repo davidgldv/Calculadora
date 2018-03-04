@@ -13,10 +13,7 @@ import org.junit.Test;
  */
 public class CalculadoraTest
 { 
-    private int num1;
-    private int num2;
-    private int rdo;
-    private Operacion op;
+
     
     public CalculadoraTest()
     {
@@ -31,9 +28,11 @@ public class CalculadoraTest
     public void setUp()
     {
     }
-
-    public void  testSuma() { 
-
+    @Test
+    public void   testSuma() { 
+        int rdo=2+3;
+        int prueba =5;
+        assertEquals(prueba,rdo );
           
     }
     /**

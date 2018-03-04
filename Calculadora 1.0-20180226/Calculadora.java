@@ -11,8 +11,8 @@
 public class Calculadora
 {
     // instance variables - replace the example below with your own
-    private int num1;
-    private int num2;
+    private int a;
+    private int b;
     private int rdo;
     private Operacion op;
 
@@ -22,52 +22,52 @@ public class Calculadora
     public Calculadora()
     {
         // initialise instance variables
-        num1 = 0;
-        num2 = 0;
+        a= 0;
+        b = 0;
         op=op.SUMA;
         
     }
     
-    public void ponNum1(int n1)
+    public void pona(int n1)
     {
         // put your code here
-        this.num1=n1;
+        this.a=n1;
     }
     
-    public void ponNum2(int n2)
+    public void ponb(int n2)
     {
         // put your code here
-        this.num2=n2;
+        this.b=n2;
     }
 
     public void opera()
     {
         switch(op){
             case SUMA:
-                rdo=num1+num2;
+                rdo= a + b;
                 break;
             case RESTA:
-                rdo=num1-num2;
+                rdo= a-b;
                 break;
             case MULTIPLICA:
-                rdo=num1*num2;
+                rdo=a*b;
                 break;
             case DIVIDE:
-                rdo=num1/num2;
+                rdo=a/b;
                 break;
             case POTENCIA:
-            if (num2 > 1){
-            for( int c=1 ;  c < num2 ;  c ++){
+            if (b > 1){
+            for( int c=1 ;  c < b ;  c ++){
                 if( c == 1){
-                    rdo=num1*num1;
+                    rdo=a*a;
                   
                 }
                 else 
-                    rdo=rdo*num1;
+                    rdo=rdo*a;
             }
         }
             else 
-                    rdo=num1;
+                    rdo=a;
    }
 }
     public void ponOperacion(String opera){
@@ -98,10 +98,12 @@ public class Calculadora
     }
     
     public void muestraTodosResultados(){
-        System.out.println("Num1="+Integer.toString(num1)+" Num2=" + Integer.toString(num2));
-        System.out.println("Suma :" + Integer.toString(num1+num2));
-        System.out.println("Resta :"+ Integer.toString(num1-num2));
-        System.out.println("Multiplica :" + Integer.toString(num1*num2));
-        System.out.println("Divide :"+ Integer.toString(num1/num2));
+        System.out.println("Num1="+Integer.toString(a)+" Num2=" + Integer.toString(b));
+        System.out.println("Suma :" + Integer.toString(a+ b));
+        System.out.println("Resta :"+ Integer.toString(a-b));
+        System.out.println("Multiplica :" + Integer.toString(a*b));
+        System.out.println("Divide :"+ Integer.toString(a/b));
+      
+
     }
 }

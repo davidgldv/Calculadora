@@ -68,13 +68,5 @@ public class CalculadoraTest
          
           
     }
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @After
-    public void tearDown()
-    {
-    }
+
 }

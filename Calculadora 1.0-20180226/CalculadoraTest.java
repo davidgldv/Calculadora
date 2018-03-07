@@ -13,26 +13,59 @@ import org.junit.Test;
  */
 public class CalculadoraTest
 { 
-
+    private int a;
+    private int b;
+    private int rdo;
+    private Operacion op;
     
     public CalculadoraTest()
-    {
+    {  a= 0;
+        b = 0;
+        op=op.SUMA;
     }
 
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
-    @Before
-    public void setUp()
-    {
-    }
     @Test
     public void   testSuma() { 
-        int rdo=2+3;
-        int prueba =5;
-        assertEquals(prueba,rdo );
+        Calculadora calc = new Calculadora();
+         calc.pona(9);
+         calc.ponb(2);
+         calc.ponOperacion("SUMA");
+         calc.opera();
+         assertEquals(11 , calc.dameResultado());
+         
+          
+    }
+    @Test
+    public void   testResta() { 
+        Calculadora calc = new Calculadora();
+         calc.pona(9);
+         calc.ponb(2);
+         calc.ponOperacion("RESTA");
+         calc.opera();
+         assertEquals(7 , calc.dameResultado());
+         
+          
+    }
+    @Test
+    public void   testMultiplicacion() { 
+        Calculadora calc = new Calculadora();
+         calc.pona(9);
+         calc.ponb(2);
+         calc.ponOperacion("MULTIPLICA");
+         calc.opera();
+         assertEquals(18 , calc.dameResultado());
+         
+          
+    }
+    @Test
+    public void   testDivision() { 
+        Calculadora calc = new Calculadora();
+         calc.pona(8);
+         calc.ponb(2);
+         calc.ponOperacion("DIVIDE");
+         calc.opera();
+         assertEquals( 4, calc.dameResultado());
+         
           
     }
     /**

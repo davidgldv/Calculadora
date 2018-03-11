@@ -122,8 +122,25 @@ public class Calculadora
                     rdo=ERROR1;
                 } 
                     break;
+             case FACTORIALES:
+                for(int c=1 ; c<a ; c++){
+                      if( c == 1){
+                    rdo=a * c;
+                  
+                }
+                else {
+                    rdo=rdo * c;
+                   
+                }  
+                }
              
-             
+                if(rdo>=999999999){
+                    rdo=ERROR;
+                }  
+            if(rdo <=-999999999){
+                    rdo=ERROR1;
+                } 
+                
    }
 }
     public void ponOperacion(String opera){
@@ -146,6 +163,8 @@ public class Calculadora
             break;
         case "RAIZ":
             op=op.RAIZ;
+        case "FACTORIALES":
+            op=op.FACTORIALES;
          
         }
     }

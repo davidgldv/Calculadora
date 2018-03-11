@@ -190,4 +190,12 @@ public class CalculadoraTest
          calc.opera();
          assertEquals(999999999 , calc.dameResultado());        
     }
+        @Test
+    public void   testFACTORIALES() { 
+        Calculadora calc = new Calculadora();
+         calc.pona(6);
+         calc.ponOperacion("FACTORIALES");
+         calc.opera();
+         assertEquals(720 , calc.dameResultado());     
+    }
 }

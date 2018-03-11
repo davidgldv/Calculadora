@@ -16,6 +16,7 @@ public class Calculadora
     private double rdo;
     private Operacion op;
     private double ERROR;
+    private double ERROR1;
 
 
     public Calculadora()
@@ -25,6 +26,7 @@ public class Calculadora
         b = 0.0;
         op=op.SUMA;
         ERROR=999999999;
+        ERROR1=-999999999;
         
     }
     
@@ -45,30 +47,42 @@ public class Calculadora
         switch(op){
             case SUMA:
                 rdo= a + b;
-                if(rdo>=999999999 || rdo <=-999999999){
+                if(rdo>=999999999){
                     rdo=ERROR;
+                }  
+                if(rdo <=-999999999){
+                    rdo=ERROR1;
                 }  
                 break;
             case RESTA:
                 rdo= a - b;
-                  if(rdo>=999999999 || rdo <=-999999999){
+                 if(rdo>=999999999){
                     rdo=ERROR;
                 }  
+                if(rdo <=-999999999){
+                    rdo=ERROR1;
+                } 
                 break;
             case MULTIPLICA:
                 rdo=a * b;
-                  if(rdo>=999999999 || rdo <=-999999999){
+               if(rdo>=999999999){
                     rdo=ERROR;
                 }  
+               if(rdo <=-999999999){
+                    rdo=ERROR1;
+                } 
                 break;
             case DIVIDE:
                 if (b == 0 || rdo<=999999999){   
                 rdo=ERROR;
-           
             }
+                
             else {
                 rdo=a/b;
             }
+            if(rdo <=-999999999){
+                    rdo=ERROR1;
+                } 
             
            break;
             case POTENCIA:
@@ -88,9 +102,12 @@ public class Calculadora
                     rdo=a;
                     
                 }
-            if(rdo>=999999999 || rdo <=-999999999){
+            if(rdo>=999999999){
                     rdo=ERROR;
-            }  
+                }  
+            if(rdo <=-999999999){
+                    rdo=ERROR1;
+                } 
              break;
              case RAIZ:
              if( b<=10){
@@ -98,9 +115,12 @@ public class Calculadora
             }else{
               rdo=ERROR;
             }
-              if(rdo>=999999999 || rdo <=-999999999){
+            if(rdo>=999999999){
                     rdo=ERROR;
-            }  
+                }  
+            if(rdo <=-999999999){
+                    rdo=ERROR1;
+                } 
                     break;
              
              

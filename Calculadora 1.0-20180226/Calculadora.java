@@ -10,7 +10,6 @@
 
 public class Calculadora
 {
-    // instance variables - replace the example below with your own
     private double a;
     private double b;
     private double rdo;
@@ -42,7 +41,7 @@ public class Calculadora
         this.b=n2;
     }
 
-    public void opera()
+    public void opera() /*Los if con la condicion de rdo sirven para fijar un valor limite*/
     {
         switch(op){
             case SUMA:
@@ -177,6 +176,7 @@ public class Calculadora
         System.out.println("Potencia :"+Math.pow((double)a,(double)b)+"");
         System.out.println("Raiz :"+Math.pow((double)a,1/(double)b)+"");
         System.out.println("Logaritmo :"+(Math.log10(a) / Math.log10(b))+"");
+        /*Aqui muestro los resultados independientemente de los valores limites ya que realmente es capaz de realizar esas operaciones*/ 
         
 }
 

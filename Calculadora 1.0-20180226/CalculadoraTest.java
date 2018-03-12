@@ -20,8 +20,8 @@ public class CalculadoraTest
     private double ERROR;
     /*Los Test de valor limite estan pensados en base a una calculadora que no sea capaz de almacenar
        mas de 10caracteres*/
-    /*No he probado los caracteres invalidos porque supongo que el usuario no va a tener acceso a ellos
-    solo a los caracteres numerecos y las operaciones*/
+    /*No he probado los caracteres invalidos porque supongo que el usuario no va a tener acceso a ellos solo a los caracteres numerecos y las operaciones*/
+
     public CalculadoraTest()
     {
         a= 0.0;

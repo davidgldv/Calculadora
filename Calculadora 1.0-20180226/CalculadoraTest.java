@@ -18,7 +18,10 @@ public class CalculadoraTest
     private double rdo;
     private Operacion op;
     private double ERROR;
-    
+    /*Los Test de valor limite estan pensados en base a una calculadora que no sea capaz de almacenar
+       mas de 10caracteres*/
+    /*No he probado los caracteres invalidos porque supongo que el usuario no va a tener acceso a ellos
+    solo a los caracteres numerecos y las operaciones*/
     public CalculadoraTest()
     {
         a= 0.0;
@@ -34,7 +37,7 @@ public class CalculadoraTest
          calc.ponb(5);
          calc.ponOperacion("SUMA");
          calc.opera();
-         assertEquals(14 , calc.dameResultado());
+         assertEquals(14 , calc.dameResultado(),0.6);
        }
     @Test
     public void   testSumaValorLimite1() { 
@@ -43,7 +46,7 @@ public class CalculadoraTest
          calc.ponb(5);
          calc.ponOperacion("SUMA");
          calc.opera();
-         assertEquals(999999999 , calc.dameResultado());
+         assertEquals(999999999 , calc.dameResultado(),0.6);
         }
     @Test
     public void   testSumaValorLimite2() { 
@@ -52,7 +55,7 @@ public class CalculadoraTest
          calc.ponb(-5);
          calc.ponOperacion("SUMA");
          calc.opera();
-         assertEquals(-999999999 , calc.dameResultado());
+         assertEquals(-999999999 , calc.dameResultado(),0.6);
         }
     @Test
     public void   testResta() { 
@@ -61,7 +64,7 @@ public class CalculadoraTest
          calc.ponb(-7);
          calc.ponOperacion("RESTA");
          calc.opera();
-         assertEquals(14 , calc.dameResultado());
+         assertEquals(14 , calc.dameResultado(),0.6);
      } @Test
     public void   testRestaValorLimite1() { 
         Calculadora calc = new Calculadora();
@@ -69,7 +72,7 @@ public class CalculadoraTest
          calc.ponb(-5);
          calc.ponOperacion("RESTA");
          calc.opera();
-         assertEquals(999999999 , calc.dameResultado());
+         assertEquals(999999999 , calc.dameResultado(),0.6);
         }
     @Test
     public void   testRestaValorLimite2() { 
@@ -78,7 +81,7 @@ public class CalculadoraTest
          calc.ponb(5);
          calc.ponOperacion("RESTA");
          calc.opera();
-         assertEquals(-999999999 , calc.dameResultado());
+         assertEquals(-999999999 , calc.dameResultado(),0.6);
         }
         
     @Test
@@ -88,7 +91,7 @@ public class CalculadoraTest
          calc.ponb(2);
          calc.ponOperacion("MULTIPLICA");
          calc.opera();
-         assertEquals(18 , calc.dameResultado());
+         assertEquals(18 , calc.dameResultado(),0.6);
  }
      @Test
     public void   testMultiplicacionValorLimite1() { 
@@ -97,7 +100,7 @@ public class CalculadoraTest
          calc.ponb(2);
          calc.ponOperacion("MULTIPLICA");
          calc.opera();
-         assertEquals(999999999 , calc.dameResultado());
+         assertEquals(999999999 , calc.dameResultado(),0.6);
              } 
          @Test
     public void   testMultiplicacionValorLimite2() { 
@@ -106,7 +109,7 @@ public class CalculadoraTest
          calc.ponb(2);
          calc.ponOperacion("MULTIPLICA");
          calc.opera();
-         assertEquals(-999999999 , calc.dameResultado());        
+         assertEquals(-999999999 , calc.dameResultado(),0.6);        
     }  
     @Test
     public void   testDivision() { 
@@ -115,7 +118,7 @@ public class CalculadoraTest
          calc.ponb(2);
          calc.ponOperacion("DIVIDE");
          calc.opera();
-         assertEquals( 4, calc.dameResultado());      
+         assertEquals( 4, calc.dameResultado(),0.6);      
     } 
     @Test
     public void   testDivisionValorLimite1() { 
@@ -124,16 +127,16 @@ public class CalculadoraTest
          calc.ponb(1);
          calc.ponOperacion("DIVIDE");
          calc.opera();
-         assertEquals( 999999999, calc.dameResultado());       
+         assertEquals( 999999999, calc.dameResultado(),0.6);       
     }
         @Test
     public void   testDivisionValorLimite2() { 
         Calculadora calc = new Calculadora();
-         calc.pona(1000000000);
+         calc.pona(-1000000000);
          calc.ponb(1);
          calc.ponOperacion("DIVIDE");
          calc.opera();
-         assertEquals( -999999999, calc.dameResultado());
+         assertEquals( -999999999, calc.dameResultado(),0.6);
       
     }
         @Test
@@ -143,7 +146,7 @@ public class CalculadoraTest
          calc.ponb(1);
          calc.ponOperacion("POTENCIA");
          calc.opera();
-         assertEquals( 8 ,calc.dameResultado());        
+         assertEquals( 8 ,calc.dameResultado(),0.6);        
     }
         @Test
     public void   testPotencia2() { 
@@ -152,7 +155,7 @@ public class CalculadoraTest
          calc.ponb(5);
          calc.ponOperacion("POTENCIA");
          calc.opera();
-         assertEquals( 32768, calc.dameResultado());        
+         assertEquals( 32768, calc.dameResultado(),0.6);        
     }
             @Test
     public void   testPotenciaValorLimite1() { 
@@ -161,16 +164,16 @@ public class CalculadoraTest
          calc.ponb(855555874);
          calc.ponOperacion("POTENCIA");
          calc.opera();
-         assertEquals( 999999999, calc.dameResultado());        
+         assertEquals( 999999999, calc.dameResultado(),0.6);        
     }
              @Test
     public void   testPotenciaValorLimite2() { 
         Calculadora calc = new Calculadora();
          calc.pona(-899999998);
-         calc.ponb(855555874);
+         calc.ponb(855555873);
          calc.ponOperacion("POTENCIA");
          calc.opera();
-         assertEquals( -999999999, calc.dameResultado());        
+         assertEquals( -999999999, calc.dameResultado(),0.6);        
         }
      @Test
     public void   testRAIZ() { 
@@ -179,16 +182,7 @@ public class CalculadoraTest
          calc.ponb(2);
          calc.ponOperacion("RAIZ");
          calc.opera();
-         assertEquals(2 , calc.dameResultado());     
-    }
-         @Test
-    public void   testRAIZ_CARACTER_INVALIDO() { 
-        Calculadora calc = new Calculadora();
-         calc.pona(2048);
-         calc.ponb(11);
-         calc.ponOperacion("RAIZ");
-         calc.opera();
-         assertEquals(999999999 , calc.dameResultado());        
+         assertEquals(2 , calc.dameResultado(),0.9);     
     }
         @Test
     public void   testFACTORIALES() { 
@@ -196,6 +190,6 @@ public class CalculadoraTest
          calc.pona(6);
          calc.ponOperacion("FACTORIALES");
          calc.opera();
-         assertEquals(720 , calc.dameResultado());     
+         assertEquals(720 , calc.dameResultado(),0.6);     
     }
 }

@@ -73,65 +73,40 @@ public class Calculadora
                 } 
                 break;
             case DIVIDE:
-                if (b == 0 || rdo<=999999999){   
-                rdo=ERROR;
-            }
-                
-            else {
                 rdo=a/b;
-            }
+
+            if(rdo >=999999999){
+                    rdo=ERROR;
+                } 
             if(rdo <=-999999999){
                     rdo=ERROR1;
                 } 
             
            break;
             case POTENCIA:
-            if (b > 1){
-            for( int c=1 ;  c < b ;  c ++){
-                if( c == 1){
-                    rdo=a * a;
-                  
-                }
-                else {
-                    rdo=rdo * a;
-                   
-                }
-                }
-            }
-            else {
-                    rdo=a;
-                    
-                }
+               rdo=Math.pow(a,b);
             if(rdo>=999999999){
                     rdo=ERROR;
                 }  
             if(rdo <=-999999999){
                     rdo=ERROR1;
                 } 
-             break;
-             case RAIZ:
-             if( b<=10){
+           break;
+          
+            case RAIZ:
               rdo = Math.pow(a,1.0/b);
-            }else{
-              rdo=ERROR;
-            }
-            if(rdo>=999999999){
+            if(rdo>999999999){
                     rdo=ERROR;
                 }  
             if(rdo <=-999999999){
                     rdo=ERROR1;
                 } 
-                    break;
+                   break;
              case FACTORIALES:
-                for(int c=1 ; c<a ; c++){
-                      if( c == 1){
-                    rdo=a * c;
-                  
-                }
-                else {
-                    rdo=rdo * c;
-                   
-                }  
+                rdo=1;
+                while( a!=0){
+                       rdo*=a;
+                       a--;
                 }
              
                 if(rdo>=999999999){
@@ -140,7 +115,16 @@ public class Calculadora
             if(rdo <=-999999999){
                     rdo=ERROR1;
                 } 
-                
+                break;
+                case LOGARITMO:
+                rdo = Math.log(a) / Math.log(b);
+                 if(rdo>=999999999){
+                    rdo=ERROR;
+                }  
+            if(rdo <=-999999999){
+                    rdo=ERROR1;
+                } 
+                break;
    }
 }
     public void ponOperacion(String opera){
@@ -163,15 +147,18 @@ public class Calculadora
             break;
         case "RAIZ":
             op=op.RAIZ;
+            break;
         case "FACTORIALES":
             op=op.FACTORIALES;
-         
+            break;
+        case  "LOGARITMO":
+            op=op.LOGARITMO;
+            break;
         }
     }
     
     public double dameResultado()
     {
-       
         return rdo;
     }
      public void muestraTodosResultados(){

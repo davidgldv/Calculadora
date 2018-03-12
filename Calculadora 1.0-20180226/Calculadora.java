@@ -93,7 +93,7 @@ public class Calculadora
                 } 
            break;
           
-            case RAIZ:
+            case RAIZ:  /*Esta funcion sirve para hacer raices de distintos radicandos*/
               rdo = Math.pow(a,1.0/b);
             if(rdo>999999999){
                     rdo=ERROR;
@@ -103,12 +103,24 @@ public class Calculadora
                 } 
                    break;
              case FACTORIALES:
+             if (a == 0){
+                 rdo=0;
+            }   
+            else{
                 rdo=1;
+            }
+                if( a > 0){
                 while( a!=0){
                        rdo*=a;
                        a--;
                 }
-             
+            }
+                else {
+                while( a!=0){
+                       rdo*=a;
+                       a++;
+                }
+                }
                 if(rdo>=999999999){
                     rdo=ERROR;
                 }  
@@ -116,14 +128,9 @@ public class Calculadora
                     rdo=ERROR1;
                 } 
                 break;
-                case LOGARITMO:
-                rdo = Math.log(a) / Math.log(b);
-                 if(rdo>=999999999){
-                    rdo=ERROR;
-                }  
-            if(rdo <=-999999999){
-                    rdo=ERROR1;
-                } 
+                case LOGARITMO: /*Esta funcion sirve para calcular el logaritmo en distintas bases*/
+                rdo = (Math.log10(a) / Math.log10(b));
+
                 break;
    }
 }
@@ -169,6 +176,7 @@ public class Calculadora
         System.out.println("Divide :"+(a/b)+"");
         System.out.println("Potencia :"+Math.pow((double)a,(double)b)+"");
         System.out.println("Raiz :"+Math.pow((double)a,1/(double)b)+"");
+        System.out.println("Logaritmo :"+(Math.log10(a) / Math.log10(b))+"");
         
 }
 

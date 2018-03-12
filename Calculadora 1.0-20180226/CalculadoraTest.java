@@ -185,11 +185,36 @@ public class CalculadoraTest
          assertEquals(2 , calc.dameResultado(),0.9);     
     }
         @Test
-    public void   testFACTORIALES() { 
+    public void   testFactoriales() { 
         Calculadora calc = new Calculadora();
-         calc.pona(6);
+         calc.pona(-6);
          calc.ponOperacion("FACTORIALES");
          calc.opera();
          assertEquals(720 , calc.dameResultado(),0.6);     
+    }
+    @Test
+    public void   testFactorialesValorLimite1() { 
+        Calculadora calc = new Calculadora();
+         calc.pona(100);
+         calc.ponOperacion("FACTORIALES");
+         calc.opera();
+         assertEquals(999999999 , calc.dameResultado(),0.6);     
+    }
+    @Test
+    public void   testFactorialesValorLimite2() { 
+        Calculadora calc = new Calculadora();
+         calc.pona(-101);
+         calc.ponOperacion("FACTORIALES");
+         calc.opera();
+         assertEquals(-999999999 , calc.dameResultado(),0.6);     
+    } 
+    @Test
+    public void   testLogaritmo() { 
+        Calculadora calc = new Calculadora();
+         calc.pona(5);
+         calc.ponb(2);
+         calc.ponOperacion("LOGARITMO");
+         calc.opera();
+         assertEquals(2.32 , calc.dameResultado(),0.9);     
     }
 }
